@@ -1,14 +1,33 @@
 import styled from "styled-components";
+import useForm from "../Hooks/useForm";
 
 export default function Form() {
+  const addToList = () => {
+    console.log(values);
+  };
+
+  const [values, handleChange, handleSubmit] = useForm(addToList);
+
   return (
     <>
-      <form>
-        <label htmlFor="text"> Type your thoughts </label>
-        <input type="text" id="text" />
+      <form onSubmit={handleSubmit}>
+        <textarea
+          name="thoughts"
+          value={values.thoughts}
+          placeholder="Your thoughts"
+          onChange={handleChange}
+          required
+        />
 
-        <label htmlFor="name"> Name </label>
-        <input type="name" id="name" />
+        <input
+          name="name"
+          type="text"
+          placeholder="Name"
+          value={values.name}
+          onChange={handleChange}
+          required
+          maxLength={20}
+        />
         <StyledButton> + </StyledButton>
       </form>
     </>

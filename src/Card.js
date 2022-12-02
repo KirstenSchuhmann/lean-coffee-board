@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Card() {
+export default function Card({ entries, onDelete, onChange, onEdit }) {
   return (
     <StyledCard>
       <h3> Kartenname </h3>
