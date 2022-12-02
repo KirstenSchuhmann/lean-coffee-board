@@ -1,24 +1,34 @@
-
-import styled  from "styled-components";
-import Form from "../Form"; 
-
+import styled from "styled-components";
+import Form from "../Form";
 
 export default function Footer() {
-    return (
-        <>
-          <StyledFooter>  <Form/> </StyledFooter>
-        </>
-      ); 
- }; 
-   
+  return (
+    <>
+      <StyledFooter>
+        <Divider className="divider" role="none" />
+        <Form />
+      </StyledFooter>
+    </>
+  );
+}
 
-    const StyledFooter = styled.footer`
-    width: 100%; 
-    height: 120px; 
-    position: absolute; 
-    bottom: 0; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    background-color: beige; 
-    `; 
+const StyledFooter = styled.footer`
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  text-align: center;
+
+  background-color: beige;
+`;
+
+const Divider = styled.hr`
+  border: none;
+  width: 100%;
+  margin: 0;
+  height: 1px;
+  background: black;
+  margin-bottom: 20px;
+  display: flex;
+`;

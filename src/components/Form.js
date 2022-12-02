@@ -1,24 +1,22 @@
-import styled  from "styled-components";
+import styled from "styled-components";
 
 export default function Form() {
-  return ( 
-  <form>
-   
-      <Divider className="divider" role="none" />
+  return (
+    <>
+      <form>
+        <label htmlFor="text"> Type your thoughts </label>
+        <input type="text" id="text" />
 
-      <label htmlFor="text"> Type your thoughts </label> 
-      <input type="text" id="text"/> 
+        <label htmlFor="name"> Name </label>
+        <input type="name" id="name" />
+        <StyledButton> + </StyledButton>
+      </form>
+    </>
+  );
+}
 
-     <label htmlFor="name"> Name </label>
-      <input type="name" id="name"/> 
-      </form>  );
-  
-} 
-
- const Divider = styled.hr`
-  border: none;
-  width: 100%;
-  margin: 0;
-  height: 1px;
-  background: black;
-`; 
+const StyledButton = styled.button`
+  border-radius: 50%;
+  color: grey;
+  margin: 20px;
+`;
