@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export default function Card({ entries, onDelete, onChange, onEdit }) {
+export default function Card({ text, name }) {
   return (
     <StyledCard>
-      <h3> Kartenname </h3>
-      <p> Ersteller der Karte 🦄</p>
+      <h3> {text}</h3>
+      <p> {name}</p>
+      <button>-</button>
     </StyledCard>
   );
 }

@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import Form from "../Form";
 
 export default function Footer() {
   return (
     <>
       <StyledFooter>
         <Divider className="divider" role="none" />
-        <Form />
       </StyledFooter>
     </>
   );
