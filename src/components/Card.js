@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export default function Card({ text, name }) {
+export default function Card({ text, name, id, onDeleteCard }) {
   return (
     <StyledCard>
       <h3> {text}</h3>
       <p> {name}</p>
-      <button>-</button>
+      <StyledButton onClick={() => onDeleteCard(id)}> - </StyledButton>
     </StyledCard>
   );
 }
@@ -19,4 +19,13 @@ const StyledCard = styled.section`
   width: 450px;
   color: #443a2b;
   margin: 20px;
+`;
+
+const StyledButton = styled.button`
+  border-radius: 50%;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  top: 15px;
+  right: 20px;
 `;

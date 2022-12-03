@@ -2,14 +2,20 @@ import styled from "styled-components";
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer/Footer";
 import Card from "../src/components/Card";
-import Form from "../src/components/Form";
+
 import { useState } from "react";
 
 export default function Home() {
   const [cards, setCards] = useState([]);
   console.log(cards);
+
   function handleAddCard(newCard) {
     setCards([newCard, ...cards]);
+  }
+
+  function handleDeleteCard(id) {
+    const DeleteCard = cards.filter((card) => card.id !== id);
+    setCards(DeleteCard);
   }
 
   return (
@@ -17,11 +23,19 @@ export default function Home() {
       <Header />
       <MainContent>
         {cards.map((card) => {
-          return <Card key={card.id} text={card.text} name={card.name} />;
+          return (
+            <Card
+              key={card.id}
+              id={card.id}
+              text={card.text}
+              name={card.name}
+              onDeleteCard={handleDeleteCard}
+            />
+          );
         })}
       </MainContent>
-      <Form onAddCard={handleAddCard} />
-      <Footer />
+
+      <Footer onAddCard={handleAddCard} />
     </>
   );
 }

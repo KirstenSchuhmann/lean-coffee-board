@@ -24,6 +24,13 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: beige;
   margin-bottom: 30px;
+  color: #472f2f;
+  background: rgb(241, 216, 136);
+  background: linear-gradient(
+    13deg,
+    rgba(241, 216, 136, 1) 0%,
+    rgba(247, 237, 164, 0.7693452380952381) 48%,
+    rgba(241, 216, 136, 1) 100%
+  );
 `;

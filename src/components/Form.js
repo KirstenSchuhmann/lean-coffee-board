@@ -24,15 +24,15 @@ export default function Form({ onAddCard }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <textarea
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledTextarea
           name="text"
           placeholder="Your thoughts"
           required
           autoComplete="off"
         />
 
-        <input
+        <StyledInput
           name="name"
           type="text"
           placeholder="Name"
@@ -41,7 +41,7 @@ export default function Form({ onAddCard }) {
           autoComplete="off"
         />
         <StyledButton> + </StyledButton>
-      </form>
+      </StyledForm>
     </>
   );
 }
@@ -49,5 +49,35 @@ export default function Form({ onAddCard }) {
 const StyledButton = styled.button`
   border-radius: 50%;
   color: grey;
-  margin: 20px;
+  //margin: 20px;
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  padding: 20px;
+  width: 100%;
+  gap: 1rem;
+`;
+
+const StyledTextarea = styled.textarea`
+  height: 2.5rem;
+  border-radius: 0.5em;
+  border: 0.5px solid #ecead9;
+  outline-color: #ffc097;
+  font-family: sans-serif;
+  caret-color: orange;
+`;
+
+const StyledInput = styled.input`
+  height: 2.5rem;
+  border-radius: 0.5em;
+  border: 0.5px solid #ecead9;
+  outline-color: #ffc097;
+  caret-color: orange;
+
+  // Styled
 `;
